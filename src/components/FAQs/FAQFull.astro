@@ -1,0 +1,329 @@
+---
+// src/components/FAQ/FAQFull.astro
+import { t } from "i18n:astro";
+
+// Create FAQ array for easy mapping - 10 FAQs total
+const faqs = [
+  {
+    question: t("home:faq.question1"),
+    answer: t("home:faq.answer1")
+  },
+  {
+    question: t("home:faq.question2"),
+    answer: t("home:faq.answer2")
+  },
+  {
+    question: t("home:faq.question3"),
+    answer: t("home:faq.answer3")
+  },
+  {
+    question: t("home:faq.question4"),
+    answer: t("home:faq.answer4")
+  },
+  {
+    question: t("home:faq.question5"),
+    answer: t("home:faq.answer5")
+  },
+  {
+    question: t("home:faq.question6"),
+    answer: t("home:faq.answer6")
+  },
+  {
+    question: t("home:faq.question7"),
+    answer: t("home:faq.answer7")
+  },
+  {
+    question: t("home:faq.question8"),
+    answer: t("home:faq.answer8")
+  },
+  {
+    question: t("home:faq.question9"),
+    answer: t("home:faq.answer9")
+  },
+  {
+    question: t("home:faq.question10"),
+    answer: t("home:faq.answer10")
+  }
+];
+
+// Split FAQs into two groups for the two-column layout
+const firstColumn = faqs.slice(0, 5);
+const secondColumn = faqs.slice(5, 10);
+---
+
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-351">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{t("home:faq.topper")}</span>
+            <h2 class="cs-title">{t("home:faq.title")}</h2>
+        </div>
+        <ul class="cs-faq-group">
+            {firstColumn.map((faq, index) => (
+                <li class={`cs-faq-item ${index === 0 ? 'active' : ''}`}>
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            {faq.question}
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        {faq.answer}
+                    </p>
+                </li>
+            ))}
+        </ul>
+        <ul class="cs-faq-group">
+            {secondColumn.map((faq) => (
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            {faq.question}
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        {faq.answer}
+                    </p>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<script>
+    const faqItems = Array.from(document.querySelectorAll('#faq-351 .cs-faq-item'));
+    for (const item of faqItems) {
+        const onClick = () => {
+            item.classList.toggle('active');
+        }
+        item.addEventListener('click', onClick);
+    }
+</script>
+
+<style lang="less">
+
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-351 {
+        padding: var(--sectionPadding);
+        background: #f7f7f7;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            row-gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-faq-group {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-faq-item {
+            list-style: none;
+            width: 100%;
+            border-bottom: 1px solid #e8e8e8;
+            transition: border-bottom 0.3s;
+
+            &.active {
+                border-color: var(--primaryLight);
+                .cs-button {
+                    color: var(--primaryLight);
+                    &:before {
+                        background-color: var(--primaryLight);
+                        transform: rotate(315deg);
+                    }
+                    &:after {
+                        background-color: var(--primaryLight);
+                        transform: rotate(-315deg);
+                    }
+                }
+                .cs-item-p {
+                    height: auto;
+                    /* 20px - 24px bottom */
+                    /* 16px - 24px left & right */
+                    padding: 0 clamp(1rem, 2vw, 1.5rem)
+                        clamp(1.25rem, 1.3vw, 1.5rem);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .cs-button {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-align: left;
+            font-weight: bold;
+            /* 16px - 20px */
+            padding: clamp(1rem, 1.3vw, 1.25rem);
+            border: none;
+            background: transparent;
+            color: var(--headerColor);
+            display: block;
+            width: 100%;
+            position: relative;
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:before {
+                /* left line */
+                content: "";
+                width: (8/16rem);
+                height: (2/16rem);
+                background-color: var(--headerColor);
+                opacity: 1;
+                border-radius: 50%;
+                position: absolute;
+                display: block;
+                top: 45%;
+                right: (24/16rem);
+                transform: rotate(45deg);
+                /* animate the transform from the left side of the x axis, and the center of the y */
+                transform-origin: left center;
+                transition: transform 0.5s;
+            }
+
+            &:after {
+                /* right line */
+                content: "";
+                width: (8/16rem);
+                height: (2/16rem);
+                background-color: var(--headerColor);
+                opacity: 1;
+                border-radius: 50%;
+                position: absolute;
+                display: block;
+                top: 45%;
+                right: (21/16rem);
+                transform: rotate(-45deg);
+                /* animate the transform from the right side of the x axis, and the center of the y */
+                transform-origin: right center;
+                transition: transform 0.5s;
+            }
+        }
+
+        .cs-button-text {
+            width: 80%;
+            display: block;
+        }
+
+        .cs-item-p {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            width: 90%;
+            height: 0;
+            margin: 0;
+            /* 16px - 24px */
+            padding: 0 clamp(1rem, 2vw, 1.5rem);
+            opacity: 0;
+            color: var(--bodyTextColor);
+            /* clips the text so it doesn't show up */
+            overflow: hidden;
+            transition:
+                opacity 0.3s,
+                padding-bottom 0.3s;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #faq-351 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+            /* push everything to the top */
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .cs-content {
+            width: 100%;
+        }
+
+        .cs-faq-group {
+            width: 48%;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #faq-351 {
+            background-color: rgba(0, 0, 0, 0.2);
+            .cs-picture {
+                border-color: var(--accent);
+            }
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title,
+            .cs-item-p {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-faq-item {
+                border-color: rgba(255, 255, 255, 0.2);
+                &.active {
+                    border-color: var(--primaryLight);
+                    .cs-button {
+                        color: var(--primaryLight);
+                        &:before,
+                        &:after {
+                            background-color: var(--primaryLight);
+                        }
+                    }
+                }
+            }
+
+            .cs-button {
+                color: var(--bodyTextColorWhite);
+                &:before,
+                &:after {
+                    background-color: var(--bodyTextColorWhite);
+                }
+            }
+        }
+    }
+}
+
+</style>

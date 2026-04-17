@@ -1,0 +1,28 @@
+---
+import clientData from '@data/client.json';
+
+const pathname = Astro.url.pathname;
+const supportedLanguages = clientData.languages || ['en'];
+const defaultLanguage = clientData.defaultLanguage || 'en';
+
+let detectedLang = defaultLanguage;
+
+for (const lang of supportedLanguages) {
+	if (lang !== defaultLanguage) {
+		if (pathname === `/${lang}` || pathname.startsWith(`/${lang}/`)) {
+			detectedLang = lang;
+			break;
+		}
+	}
+}
+
+const schema = clientData.schema?.[detectedLang] || clientData.schema?.[defaultLanguage];
+---
+
+{schema?.business && (
+	<script type="application/ld+json" set:html={JSON.stringify(schema.business)} />
+)}
+
+{schema?.website && (
+	<script type="application/ld+json" set:html={JSON.stringify(schema.website)} />
+)}

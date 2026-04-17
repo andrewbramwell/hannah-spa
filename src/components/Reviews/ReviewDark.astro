@@ -1,0 +1,249 @@
+---
+// src/components/Reviews/ReviewsDark.astro
+import { t } from "i18n:astro";
+
+// Create reviews array for easy mapping
+const reviews = [
+  {
+    title: t("home:reviews.review1.title"),
+    text: t("home:reviews.review1.text"),
+    name: t("home:reviews.review1.name")
+  },
+  {
+    title: t("home:reviews.review2.title"),
+    text: t("home:reviews.review2.text"),
+    name: t("home:reviews.review2.name")
+  },
+  {
+    title: t("home:reviews.review3.title"),
+    text: t("home:reviews.review3.text"),
+    name: t("home:reviews.review3.name")
+  }
+];
+---
+
+<!-- ============================================ -->
+<!--                   ReviewsDark                    -->
+<!-- ============================================ -->
+<section id="reviews-591">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{t("home:reviews.topper")}</span>
+            <h2 class="cs-title">{t("home:reviews.title")}</h2>
+            <p class="cs-text">
+                {t("home:reviews.description")}
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            {reviews.map((review) => (
+                <li class="cs-item">
+                    <svg class="cs-quote" aria-hidden="true" width="40" height="33" viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_30)">
+                            <path d="M9.17589 33H0L7.32198 0H22L9.17589 33Z" fill="currentColor"/>
+                            <path d="M27.1759 33H18L25.322 0H40L27.1759 33Z" fill="currentColor"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_30">
+                                <rect width="40" height="33" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h3 class="cs-h3">{review.title}</h3>
+                    <p class="cs-item-text">
+                        {review.text}
+                    </p>
+                    <span class="cs-name">{review.name}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #reviews-591 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-topper,
+        .cs-title {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-text {
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (20/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            /* 32px - 48px top & bottom */
+            /* 16px - 32px left & right */
+            padding: clamp(2rem, 7vw, 3rem) clamp(1rem, 4vw, 2rem);
+            /* makes padding not affect height and width */
+            box-sizing: border-box;
+            background-color: var(--sectionColor);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-quote {
+            /* 30px - 40px */
+            width: clamp(1.875rem, 4vw, 2.5rem);
+            height: auto;
+            margin: 0 0 (32/16rem) 0;
+            display: block;
+            color: var(--primary);
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 4vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (24/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 4vw, 1rem);
+            line-height: 1.5em;
+            max-width: (388/16rem);
+            margin: 0 0 (48/16rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-name {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 500;
+            margin: auto 0 0 0;
+            color: var(--headerColor);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: (8/16rem);
+            position: relative;
+            &:before {
+                content: "";
+                width: (8/16rem);
+                height: 1px;
+                background: currentColor;
+                display: block;
+                position: relative;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #reviews-591 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-card-group {
+            /* we went grid on tablet so that we can have an even spaced section with this design. Flexbox has a hard time making this type of design work with even gaps. */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cs-item {
+            grid-column: ~"1/2";
+            grid-row: ~"1/2";
+            &:nth-of-type(2) {
+                grid-column: ~"2/3";
+                grid-row: ~"1/2";
+            }
+            &:nth-of-type(3) {
+                grid-column: ~"1/3";
+                grid-row: ~"2/3";
+            }
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #reviews-591 {
+        .cs-card-group {
+            /* went back to flexbox for an easier transition to this horizontal layout. We don't have to re-target each cs-item to reset its grid positioning, we can just revert to flexbox and make the layout in less code and hassle */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .cs-item {
+            width: 100%;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #reviews-591 {
+            background-color: var(--medium);
+
+            .cs-h3,
+            .cs-item-text,
+            .cs-name {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item-text {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+                                
+
+                                                                     
+</style>

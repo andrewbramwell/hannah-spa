@@ -1,0 +1,27 @@
+{
+  "landing": {
+    "title": "Contactez-nous",
+    "description": "Contactez [Your Business] dès aujourd'hui. Réservez votre rendez-vous, posez vos questions ou découvrez nos services. Nous sommes là pour vous aider à vous sentir au mieux."
+  },
+  "section": {
+    "topper": "Section Contact",
+    "title": "Entrez en Contact avec Nous",
+    "text": "Nous sommes là pour répondre à vos questions et vous aider à réserver votre prochain rendez-vous. Contactez-nous par téléphone, e-mail ou visitez-nous à notre adresse.",
+    "phoneLabel": "Téléphone",
+    "hoursLabel": "Horaires d'Ouverture",
+    "hours": "Lun-Sam: 10:00-20:00, Dim: 10:00-18:00",
+    "addressLabel": "Adresse"
+  },
+  "form": {
+    "title": "Prendre un Rendez-vous",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre Nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Votre E-mail",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "Votre Numéro de Téléphone",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-nous de vos besoins...",
+    "submitButton": "Envoyer le Message"
+  }
+}
