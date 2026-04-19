@@ -21,11 +21,11 @@
         "auto": "Auto"
     },
     "ctaComponent": {
-        "topper": "CTA Section Label ",
-        "title": "SEO Optimized CTA Heading",
-        "text": "Brief compelling text encouraging action. Highlight urgency, benefits, or special offers. Keep it 1-2 sentences.",
-        "button": "Action Button Text",
-        "imageAlt": "Descriptive alt text for CTA background image"
+        "topper": "Book Your Visit",
+        "title": "Experience Authentic Thai Wellness at Castle Bromwich Hall",
+        "text": "Whether it's a solo treatment or a full spa day for two, we'd love to welcome you. Online booking available seven days a week.",
+        "button": "Book Now",
+        "imageAlt": "massage oils and towels"
     },
     "cookiePopup": {
         "title": "This website uses cookies",
@@ -43,7 +43,7 @@
         "featured1": "Featured 1",
         "featured2": "Featured 2",
         "click": "Click to email",
-        "p": "Extra content if you need it, if not you can delete this whole p tag. I usually do.",
+        "p": "Rooted in traditional Thai practice, Hannah Thai Spa brings genuine wellness treatments to the heart of Castle Bromwich. A calm, welcoming space inside one of Birmingham's most beautiful historic buildings",
         "credit": "Designed and Hand Coded by "
     },
     "notFound": {

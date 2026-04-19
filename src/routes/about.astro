@@ -128,7 +128,7 @@ const description = t("about:landing.description");
     <!-- ============================================ -->
     <!--                Meet The Team                 -->
     <!-- ============================================ -->
-
+<!-- 
     <section id="meet-team-1677">
         <div class="cs-container">
             <div class="cs-content">
@@ -139,9 +139,9 @@ const description = t("about:landing.description");
                 {teamMembers.map((member) => (
                     <li class="cs-item">
                         <picture class="cs-picture">
-                            <!--Mobile Image-->
+
                             <source media="(max-width: 600px)" srcset={member.imageMobile} type="image/webp" />
-                            <!--Tablet and above Image-->
+
                             <source media="(min-width: 601px)" srcset={member.imageDesktop} type="image/webp" />
                             <img loading="lazy" decoding="async" src={member.imageFallback} alt={member.name} width="290" height="380" />
                         </picture>
@@ -154,7 +154,7 @@ const description = t("about:landing.description");
                 ))}
             </ul>
         </div>
-    </section>
+    </section>-->
 
     <CTAFullWidth />
 

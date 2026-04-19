@@ -1,19 +1,19 @@
 {
   "landing": {
-    "title": "About Us",
-    "description": "Learn about our story, mission, and the team behind [Your Business]. Discover what makes us unique and why clients trust us for their [service] needs."
+    "title": "About Us ",
+    "description": "Learn about the story behind Hannah Thai Spa — founded by Nutcha, a Thai entrepreneur from north-east Thailand, bringing authentic Thai wellness to Castle Bromwich and the Midlands."
   },
   "section": {
-    "topper": "About Section Label ",
-    "title": "About Page  ",
-    "paragraph1": "First paragraph introducing your business story, mission, and values. Explain what drives you and what makes your approach unique. Connect emotionally with your audience.",
-    "paragraph2": "Second paragraph elaborating on your expertise, experience, or philosophy. Share what sets you apart and why clients should trust you with their wellbeing.",
-    "paragraph3": "Third paragraph elaborating on your expertise, experience, or philosophy. Share what sets you apart and why clients should trust you with their wellbeing.",
-    "paragraph4": "Third paragraph elaborating on your expertise, experience, or philosophy. Share what sets you apart and why clients should trust you with their wellbeing.",
-    "quoteText": "Inspirational or meaningful quote that captures your business philosophy, mission, or approach to client care.",
-    "quoteName": "Quote Author Name ",
-    "quoteJob": "Quote Author Title ",
-    "imageAlt": "Descriptive alt text for about section image"
+    "topper": "Our Story",
+    "title": "Authentic Thai Wellness, Rooted in Tradition",
+    "paragraph1": "Hannah Thai Spa was founded by Nutcha, a Thai entrepreneur from the north-east of Thailand who has called the Midlands home for over 20 years. With a deep respect for traditional Thai healing and a passion for sharing it with others, Nutcha has built a family of spa businesses across the Midlands and back home in Koh Samui, Thailand.",
+    "paragraph2": "The Castle Bromwich spa is named after her daughter Hannah, who manages the day-to-day running of the business. Between them, they bring together years of experience, genuine Thai expertise, and a shared commitment to making every guest feel properly cared for.",
+    "paragraph3": "Every treatment at Hannah Thai Spa is delivered by Thai therapists trained in traditional technique — not a simplified version of it. From the moment you arrive at Castle Bromwich Hall to the moment you leave, the aim is always the same: to leave you feeling genuinely restored.",
+    "paragraph4": "Whether you're local to Birmingham or visiting the hotel, you're welcome here. We've made it our business to bring a little piece of Thailand to the heart of the Midlands — and we hope you feel that from the very first visit.",
+    "quoteText": "I've spent over 20 years sharing Thai wellness with people here in the UK. It's not just what we do — it's who we are.",
+    "quoteName": "Nutcha",
+    "quoteJob": "Founder, Hannah Thai Spa",
+    "imageAlt": "Nutcha and Hannah, founders of Hannah Thai Spa at Castle Bromwich Hall, Birmingham"
   },
   "team": {
     "topper": "Team Section Label (e.g., Our Team, Meet The Team)",

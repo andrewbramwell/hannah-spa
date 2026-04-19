@@ -11,21 +11,18 @@ const MULTILINGUAL = true; // false for single language websites!
 
 // Language configuration
 const DEFAULT_LOCALE = "en";
-const AVAILABLE_LOCALES = MULTILINGUAL ? ["en", "de", "es", "fr"] : [DEFAULT_LOCALE]; // remove redundant languages from language switch!
+const AVAILABLE_LOCALES = MULTILINGUAL ? ["en"] : [DEFAULT_LOCALE]; // remove redundant languages from language switch!
 
 // Sitemap i18n config (only used if MULTILINGUAL is true)
 const SITEMAP_I18N = MULTILINGUAL ? {
   defaultLocale: DEFAULT_LOCALE,
   locales: {
-    en: 'en-US',
-    de: 'de-DE',
-    es: 'es-ES',
-    fr: 'fr-FR', // remove redundant languages from sitemap!
+    en: 'en-GB',
   },
 } : undefined;
 
 export default defineConfig({
-  site: "https://www.yourwebsite.com", // update me!
+  site: "https://hannahthaispa.co.uk", // update me!
   integrations: [
     icon(),
     i18n({

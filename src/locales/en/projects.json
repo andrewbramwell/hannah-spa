@@ -1,0 +1,32 @@
+{
+  "tiles": {
+    "topper": "Blog & News",
+    "title": "The Stories Behind Japandi Designs",
+    "text": "Dive into the elegant fusion of Japanese minimalism and Scandinavian functionality with Japandi FurniStitch. Our blog offers expert insights, design tips, and cultural context to enhance your understanding and appreciation of each carefully crafted furniture piece.",
+    "tile1": {
+      "name": "Traditional Thai Massage",
+      "tagline": "Discover the serene beauty of Japandi style interiors, blending Japanese minimalism with Scandinavian simplicity for functional and aesthetically pleasing spaces.",
+      "price1": "30 Mins £100",
+      "price2": "",
+      "price3": "",
+      "price4": ""
+    },
+    "tile2": {
+      "name": "Traditional Thai Massage",
+      "tagline": "Discover the serene beauty of Japandi style interiors, blending Japanese minimalism with Scandinavian simplicity for functional and aesthetically pleasing spaces.",
+      "price1": "30 Mins £100",
+      "price2": "",
+      "price3": "",
+      "price4": ""
+    },
+    "tile3": {
+      "name": "Traditional Thai Massage",
+      "tagline": "Discover the serene beauty of Japandi style interiors, blending Japanese minimalism with Scandinavian simplicity for functional and aesthetically pleasing spaces.",
+      "price1": "30 Mins £100",
+      "price2": "60 Mins £150",
+      "price3": "",
+      "price4": ""
+    },
+    "cta": "Book Treatment"
+  }
+}

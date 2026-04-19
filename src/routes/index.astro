@@ -1,38 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
 import { getLocalePath, t } from "i18n:astro";
 import { getOptimizedImage } from "@utils/utils";
-import HeroSplit from '@components/Heroes/HeroSplit.astro';
-import HeroLeft from '@components/Heroes/HeroLeft.astro';
 import HeroLeft2 from '@components/Heroes/HeroLeft2.astro';
-import HeroCenter from '@components/Heroes/HeroCenter.astro';
-import HeroLight from '@components/Heroes/HeroLight.astro';
-import ServiceSquares from '@components/Services/ServiceSquares.astro';
-import Service4 from '@components/Services/Service4.astro';
-import ServiceFullWidth from '@components/Services/ServiceFullWidth.astro';
-import WhyUs1 from '@components/WhyUs/WhyUs1.astro';
-import WhyUs2 from '@components/WhyUs/WhyUs2.astro';
-import WhyUs2R from '@components/WhyUs/WhyUs2R.astro';
+import ServiceTiles3 from '@components/Services/ServiceTiles3.astro';
 import WhyUs3 from '@components/WhyUs/WhyUs3.astro';
-import WhyUs4 from '@components/WhyUs/WhyUs4.astro';
-import WhyUs4R from '@components/WhyUs/WhyUs4R.astro';
-import About1 from '@components/About/About1.astro';
-import About1R from '@components/About/About1R.astro';
-import FeaturedMulti from '@components/Featured/FeaturedMulti.astro';
-import FeaturedMultiR from '@components/Featured/FeaturedMultiR.astro';
-import FeaturedSingle from '@components/Featured/FeaturedSingle.astro';
-import FeaturedSingleR from '@components/Featured/FeaturedSingleR.astro';
-import FeaturedFull from '@components/Featured/FeaturedFull.astro';
-import FeaturedFullR from '@components/Featured/FeaturedFullR.astro';
 import Review2 from '@components/Reviews/Review2.astro';
-import Review3 from '@components/Reviews/Review3.astro';
-import ReviewDark from '@components/Reviews/ReviewDark.astro';
 import FAQwithImage from '@components/FAQs/FAQwithImage.astro';
-import FAQwithImageR from '@components/FAQs/FAQwithImageR.astro';
-import FAQFull from '@components/FAQs/FAQFull.astro';
 import CTAFullWidth from '@components/CTAs/CTAFullWidth.astro';
-import CTAFull from '@components/CTAs/CTAFull.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Hero (for rendering)
 import landingImage from "@assets/images/hero.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -44,48 +19,187 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
 <BaseLayout title={t("home:layout.title")} description={t("home:layout.description")} preloadedImage={optimizedMobileLandingImage}>
 
 
-<HeroLeft />
-<HeroSplit />
 <HeroLeft2 />
-<HeroCenter />
-<HeroLight />
 
-<ServiceSquares />
-<Service4 />
-<ServiceFullWidth />
+<ServiceTiles3 />
 
-<WhyUs1 />
-<WhyUs2 />
-<WhyUs2R />
 <WhyUs3 />
-<WhyUs4 />
-<WhyUs4R />
-<About1 />
-<About1R />
 
-<FeaturedMulti />
-<FeaturedMultiR />
-<FeaturedSingle />
-<FeaturedSingleR />
-<FeaturedFull />
-<FeaturedFullR />
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-402">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">OOur Space</span>
+            <h2 class="cs-title">Inside Hannah Thai Spa</h2>
+            <p class="cs-text">
+                A quiet, welcoming space inside one of Birmingham's most recognised historic buildings.
+            </p>
+        </div>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal1-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal1.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal1.jpg" alt="gallery" width="630" height="400">
+            </picture>
+            <!--Picture 2-->
+             <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal2-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal2.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal2.jpg" alt="gallery" width="630" height="400">
+            </picture>
+            <!--Picture 4-->
+             <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal3-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal3.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal3.jpg" alt="gallery" width="630" height="400">
+            </picture>
+            <!--Picture 6-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal4-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal4.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal4.jpg" alt="gallery" width="630" height="400">
+            </picture>
+
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal5-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal5.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal5.jpg" alt="gallery" width="630" height="400">
+            </picture>
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="/assets/images/gallery/gal6-m.webp">
+                <source media="(min-width: 601px)" srcset="/assets/images/gallery/gal6.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/gallery/gal6.jpg" alt="gallery" width="630" height="400">
+            </picture>
+        </div>
+    </div>
+</section>
 
 <Review2 />
-<Review3 />
-<ReviewDark />
+
 <FAQwithImage />
-<FAQwithImageR />
-<FAQFull />
 
-
-	
-	
 <CTAFullWidth />
-<CTAFull />
 
 </BaseLayout>
 
 <style lang="less">
 	
-	
+	/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-402 {
+        padding: var(--sectionPadding);
+        padding-top: 0;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-gallery {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* 16px - 20px */
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-image {
+            width: 47%;
+            display: block;
+            position: relative;
+            /* clips the image corners */
+            overflow: hidden;
+            aspect-ratio: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes it act like a background image */
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #gallery-402 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-image {
+            width: 31.8%;
+            max-width: (300/16rem);
+            aspect-ratio: 1;
+        }
+    }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #gallery-402 {
+        .cs-gallery {
+            justify-content: center;
+            align-items: stretch;
+        }
+        .cs-image {
+            width: (630/16rem);
+            max-width: 100%;
+            height: (400/16rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #gallery-402 {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+            .cs-title,
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+            }
+            .cs-text {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+                                
+                                
 </style>

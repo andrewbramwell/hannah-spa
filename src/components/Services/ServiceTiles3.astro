@@ -1,0 +1,284 @@
+---
+import { t } from "i18n:astro";
+import { getImage } from "astro:assets";
+import client from "@data/client.json";
+
+import massage1 from "@assets/images/massages/massage1.jpg";
+import pkg1 from "@assets/images/massages/package1.jpg";
+import pkg3 from "@assets/images/massages/package3.jpg";
+
+const optimizedImage1 = await getImage({ src: massage1, format: 'webp', width: 305 });
+const optimizedImage1Mobile = await getImage({ src: massage1, format: 'webp', width: 600 });
+const optimizedImage2 = await getImage({ src: pkg1, format: 'webp', width: 305 });
+const optimizedImage2Mobile = await getImage({ src: pkg1, format: 'webp', width: 600 });
+const optimizedImage3 = await getImage({ src: pkg3, format: 'webp', width: 305 });
+const optimizedImage3Mobile = await getImage({ src: pkg3, format: 'webp', width: 600 });
+
+const tiles = [
+  {
+    name: t("home:services.service1.name"),
+    tagline: t("home:services.service1.description"),
+    imageDesktop: optimizedImage1.src,
+    imageMobile: optimizedImage1Mobile.src,
+    imageFallback: massage1.src,
+    price: t("home:services.service1.price"),
+  },
+  {
+    name: t("home:services.service2.name"),
+    tagline: t("home:services.service2.description"),
+    imageDesktop: optimizedImage2.src,
+    imageMobile: optimizedImage2Mobile.src,
+    imageFallback: pkg1.src,
+    price: t("home:services.service2.price"),
+  },
+  {
+    name: t("home:services.service3.name"),
+    tagline: t("home:services.service3.description"),
+    imageDesktop: optimizedImage3.src,
+    imageMobile: optimizedImage3Mobile.src,
+    imageFallback: pkg3.src,
+    price: t("home:services.service3.price"),
+  },
+].filter(tile => tile.name);
+---
+
+<!-- ============================================ -->
+<!--               Services Tiles                 -->
+<!-- ============================================ -->
+
+<section id="services-tiles-home">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{t("home:services.topper")}</span>
+            <h2 class="cs-title">{t("home:services.title")}</h2>
+            <p class="cs-text">
+                {t("home:services.description")}
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            {tiles.map((tile) => (
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset={tile.imageMobile} type="image/webp" />
+                        <source media="(min-width: 601px)" srcset={tile.imageDesktop} type="image/webp" />
+                        <img loading="lazy" decoding="async" src={tile.imageFallback} alt={tile.name} width="305" height="200" />
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">{tile.name}</h3>
+                        <div class="cs-pricing">
+                            {tile.price && <span class="cs-duration">{tile.price}</span>}
+                        </div>
+                        <p class="cs-item-text">{tile.tagline}</p>
+                    </div>
+                    <a href={client.bookingUrl} target="_blank" rel="noopener noreferrer" class="cs-link">
+                        {t("home:services.linkText")}
+                        <img class="cs-link-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" width="20" height="20" />
+                    </a>
+                </li>
+            ))}
+        </ul>
+        <a href="/services/" target="_blank" rel="noopener noreferrer" class="cs-button-solid">All Treatments</a>
+    </div>
+</section>
+
+<style lang="less">
+
+/*-- -------------------------- -->
+<---        Services Tiles       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-tiles-home {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (784/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-title,
+        .cs-text {
+            max-width: 100%;
+        }
+
+        .cs-card-group {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: stretch;
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            height: auto;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--secondary);
+                opacity: 0.05;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: clamp(13.75rem, 26vw, 18.75rem);
+            overflow: hidden;
+            display: block;
+            flex-shrink: 0;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cs-flex {
+            padding: (24/16rem) clamp(1rem, 2vw, 1.5rem);
+            flex: 1;
+        }
+
+        .cs-h3 {
+            font-size: clamp(1.25rem, 2.3vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-pricing {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-link {
+            font-weight: 700;
+            line-height: 1.2em;
+            text-decoration: none;
+            padding: (16/16rem) (24/16rem);
+            color: var(--headerColor);
+            border-top: 1px solid #e7e7e8;
+            display: flex;
+            justify-content: space-between;
+            gap: (32/16rem);
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+            }
+        }
+
+        .cs-link-icon {
+            width: (20/16rem);
+            height: auto;
+            display: block;
+            flex-shrink: 0;
+            transition: filter 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #services-tiles-home {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #services-tiles-home {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title,
+            .cs-text,
+            .cs-h3,
+            .cs-pricing,
+            .cs-item-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-link {
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+             }
+
+            .cs-text,
+            .cs-item-text {
+                opacity: 0.8;
+            }
+
+            .cs-item {
+                &:before {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+}
+
+</style>

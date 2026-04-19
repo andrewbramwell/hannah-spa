@@ -10,20 +10,20 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #2CB6CE;
-    --primaryLight: #2CB6CE;
-    --secondary: #9B86FE;
+    --primary: #CBA243;
+    --primaryLight: #CBA243;
+    --secondary: #CBA243;
     --secondaryLight: #9B86FE;
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
-    --sectionColor: #F7F7FA;
+    --sectionColor: #FDFBF5;
 
     /* dark mode colors */
-    --primaryDark: #fab0c6;
-    --dark: #121212;
-    --medium: #282828;
-    --accent: #404040;
+    --primaryDark: #CBA243;
+    --dark: #462C1F;
+    --medium: #452c1f;
+		--accent: #594338;
     --grey: hsl(224, 14%, 16%);
     --light: hsl(230, 20%, 94%);
 
@@ -44,13 +44,32 @@
     font-size: var(--topperFontSize);
     font-weight: 700;
     line-height: 1.2em;
+    text-align: inherit;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--primaryLight);
-    margin-bottom: (8/16rem);
+    letter-spacing: .1em;
+    max-width: fit-content;
+    margin-bottom: (4/16rem);
+    padding: (4/16rem) (12/16rem);
+    color: var(--primary);
     display: block;
-    font-family: @font-body, Arial, sans-serif;  // Uses body font
-  }
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary);
+        opacity: 0.1;
+        border-radius: (4/16rem);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+                                
 
   .cs-title {
     font-size: var(--headerFontSize);

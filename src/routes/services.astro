@@ -10,8 +10,8 @@ import landingImage from "@assets/images/landing.jpg";
 const optimizedImage = await getOptimizedImage(landingImage);
 
 // Import the service component you want to use
-import ServicesTiles from "@components/ServicePages/ServicesTiles.astro";
-import ServicesList from "@components/ServicePages/ServicesList.astro";
+import ServiceTiles2 from "@components/Packages/ServiceTiles2.astro";
+import ServiceTiles3 from "@components/ServicePages/ServiceTiles3.astro";
 // import ServicesTable from "@components/Services/ServicesTable.astro";
 
 import CTAFullWidth from '@components/CTAs/CTAFullWidth.astro';
@@ -32,7 +32,8 @@ const description = t("services:landing.description");
     <Landing title={t("services:landing.title")} image={optimizedImage} />
 
     <!-- Use the selected service component -->
-    <ServicesTiles />
-    <ServicesList />
+    <ServiceTiles2 />
+    <ServiceTiles3 />
+
     <CTAFullWidth />
 </BaseLayout>

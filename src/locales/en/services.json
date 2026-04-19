@@ -1,225 +1,122 @@
 {
   "landing": {
-    "title": "Our Services | Your Business Name - Professional Treatments",
-    "description": "Explore our range of professional massage and spa treatments. From traditional Thai massage to aromatherapy, find the perfect treatment for your needs."
+    "title": "Our Treatments ",
+    "description": "Explore our range of traditional Thai massage and spa treatments in Castle Bromwich, Birmingham. From hot stone massage to herbal compress, find the perfect treatment for you."
   },
   "tiles": {
-    "topper": "Our Services",
-    "title": "Professional Massage & Spa Treatments",
-    "text": "Choose from our range of expertly delivered treatments designed to relax, rejuvenate, and restore your body and mind. Each service is tailored to your individual needs.",
+    "topper": "Our Treatments",
+    "title": "Thai Massage & Spa Treatments",
+    "text": "Choose from our range of traditional Thai treatments, each one designed to ease tension, restore balance, and leave you feeling genuinely well. Every session is tailored to how you feel on the day.",
     "service1": {
-      "name": "Traditional Thai Massage",
-      "tagline": "Ancient healing techniques for modern relaxation",
-      "price1": "30 min: £40",
-      "price2": "60 min: £60",
-      "price3": "90 min: £85",
+      "name": "Thai Traditional Massage",
+      "tagline": "A firm, revitalising massage combining deep pressure, hot oil, and traditional Thai stretching techniques.",
+      "price1": "60 min: £85",
+      "price2": "90 min: £119",
+      "price3": "",
       "price4": ""
     },
     "service2": {
-      "name": "Aromatherapy Massage",
-      "tagline": "Essential oils combined with soothing techniques",
-      "price1": "60 min: £70",
-      "price2": "90 min: £95",
-      "price3": "",
-      "price4": ""
-    },
-    "service3": {
-      "name": "Deep Tissue Massage",
-      "tagline": "Target chronic tension and muscle pain",
-      "price1": "60 min: £75",
-      "price2": "90 min: £100",
-      "price3": "",
-      "price4": ""
-    },
-    "service4": {
       "name": "Hot Stone Massage",
-      "tagline": "Heated stones for deep muscle relaxation",
-      "price1": "60 min: £80",
+      "tagline": "Smooth heated stones melt away deep-seated tension, promoting muscle relaxation and improved circulation.",
+      "price1": "60 min: £75",
       "price2": "90 min: £105",
       "price3": "",
       "price4": ""
     },
-    "service5": {
-      "name": "Sports Massage",
-      "tagline": "Enhance performance and prevent injuries",
-      "price1": "30 min: £45",
-      "price2": "60 min: £70",
+    "service3": {
+      "name": "Herbal Compress Massage",
+      "tagline": "Steamed Thai herbal bundles ease pain, reduce stiffness, and calm inflammation across the body.",
+      "price1": "60 min: £75",
+      "price2": "90 min: £105",
       "price3": "",
       "price4": ""
     },
+    "service4": {
+      "name": "Thai Relaxing Massage",
+      "tagline": "A gentle, flowing oil massage with aromatherapy to ease everyday stress and guide you into complete calm.",
+      "price1": "45 min: £65",
+      "price2": "",
+      "price3": "",
+      "price4": ""
+    },
+    "service5": {
+      "name": "Sport Massage",
+      "tagline": "Deep-tissue techniques targeting muscle fatigue to speed up recovery and improve physical performance.",
+      "price1": "60 min: £90",
+      "price2": "90 min: £119",
+      "price3": "120 min: £169",
+      "price4": ""
+    },
     "service6": {
-      "name": "Reflexology",
-      "tagline": "Pressure points for whole body wellness",
-      "price1": "30 min: £35",
-      "price2": "60 min: £55",
+      "name": "Body Scrubbing Ritual",
+      "tagline": "Full-body exfoliation that removes dead skin, stimulates circulation, and reveals smoother, refreshed skin.",
+      "price1": "60 min: £95",
+      "price2": "",
       "price3": "",
       "price4": ""
     },
     "service7": {
-      "name": "Couples Massage",
-      "tagline": "Relax together in our couples suite",
-      "price1": "60 min: £120",
-      "price2": "90 min: £170",
+      "name": "Facial Massage Therapy",
+      "tagline": "Releases tension in the face and jaw, boosts circulation, and leaves your complexion naturally refreshed.",
+      "price1": "45 min: £75",
+      "price2": "",
       "price3": "",
       "price4": ""
     },
     "service8": {
-      "name": "Prenatal Massage",
-      "tagline": "Safe, gentle care for expecting mothers",
-      "price1": "60 min: £65",
-      "price2": "90 min: £90",
+      "name": "Jacuzzi & Sauna Suite (Single)",
+      "tagline": "Private heat therapy to relax muscles, support detoxification, and prepare your body for treatment. Pre-treatment only.",
+      "price1": "£29",
+      "price2": "",
       "price3": "",
       "price4": ""
     },
     "service9": {
-      "name": "Lymphatic Drainage",
-      "tagline": "Boost circulation and reduce swelling",
-      "price1": "60 min: £75",
-      "price2": "90 min: £100",
+      "name": "Jacuzzi & Sauna Suite — Couples",
+      "tagline": "A private Jacuzzi and sauna for two — the perfect way to unwind together before your massage treatments. Pre-treatment only.",
+      "price1": "£80",
+      "price2": "",
       "price3": "",
       "price4": ""
-    },
-    "service10": {
-      "name": "Couples Massage",
-      "tagline": "Relax together in our couples suite",
-      "price1": "60 min: £120",
-      "price2": "90 min: £170",
-      "price3": "",
-      "price4": ""
-    },
-    "service11": {
-      "name": "Prenatal Massage",
-      "tagline": "Safe, gentle care for expecting mothers",
-      "price1": "60 min: £65",
-      "price2": "90 min: £90",
-      "price3": "",
-      "price4": ""
-    },
-    "service12": {
-      "name": "Lymphatic Drainage",
-      "tagline": "Boost circulation and reduce swelling",
-      "price1": "60 min: £75",
-      "price2": "90 min: £100",
-      "price3": "",
-      "price4": ""
-    },
-    "service13": {
-      "name": "Couples Massage",
-      "tagline": "Relax together in our couples suite",
-      "price1": "60 min: £120",
-      "price2": "90 min: £170",
-      "price3": "",
-      "price4": ""
-    },
-    "service14": {
-      "name": "Prenatal Massage",
-      "tagline": "Safe, gentle care for expecting mothers",
-      "price1": "60 min: £65",
-      "price2": "90 min: £90",
-      "price3": "",
-      "price4": ""
-    },
-    "service15": {
-      "name": "Lymphatic Drainage",
-      "tagline": "Boost circulation and reduce swelling",
-      "price1": "60 min: £75",
-      "price2": "90 min: £100",
-      "price3": "",
-      "price4": ""
-    },
-    "cta": "Book Your Appointment"
+    }
   },
-  "list": {
-    "topper": "Our Services",
-    "title30": "30 Minute Treatments",
-    "title60": "60 Minute Treatments",
-    "title90": "90 Minute Treatments",
-    "title120": "120 Minute Treatments",
-    "imageAlt": "Massage therapy session",
-    "duration30": {
-      "service1": {
-        "name": "Express Back Massage",
-        "description": "Focused relief for back, neck and shoulders. Perfect for a quick reset during your busy day.",
-        "price": "£40"
-      },
-      "service2": {
-        "name": "Foot Reflexology",
-        "description": "Pressure point therapy targeting specific areas through the feet. Promotes overall wellness.",
-        "price": "£35"
-      },
-      "service3": {
-        "name": "Head & Shoulder Massage",
-        "description": "Release tension in the upper body. Ideal for desk workers and stress relief.",
-        "price": "£40"
-      }
+  "packages": {
+    "topper": "Our Packages",
+    "title": "Spa Packages",
+    "text": "Choose from our curated packages, each designed to give you the most from your visit.",
+    "cta": "Book Now",
+    "package1": {
+      "name": "Couples Massage Package",
+      "price1": "60 min: £150",
+      "price2": "",
+      "price3": "",
+      "price4": "",
+      "feature1": "A full hour of side-by-side massage in a calm, shared space — a lovely way to slow down and reconnect.",
+      "feature2": "Includes a complimentary 30-minute Jacuzzi & Sauna Suite so you can ease in before your treatment begins.",
+      "feature3": "Everything you need for a proper afternoon off together.",
+      "feature4": ""
     },
-    "duration60": {
-      "service1": {
-        "name": "Traditional Thai Massage",
-        "description": "Ancient healing techniques combining acupressure, stretching and energy work. Full body treatment for deep relaxation.",
-        "price": "£60"
-      },
-      "service2": {
-        "name": "Aromatherapy Massage",
-        "description": "Therapeutic massage enhanced with essential oils. Customized blend for your needs - relaxation, energy or balance.",
-        "price": "£70"
-      },
-      "service3": {
-        "name": "Deep Tissue Massage",
-        "description": "Intensive therapy targeting chronic muscle tension and knots. Uses firm pressure to release deep-seated stress.",
-        "price": "£75"
-      },
-      "service4": {
-        "name": "Hot Stone Massage",
-        "description": "Smooth heated stones melt away tension. The warmth penetrates deeply for profound muscle relaxation.",
-        "price": "£80"
-      },
-      "service5": {
-        "name": "Sports Massage",
-        "description": "Specialized treatment for athletes and active individuals. Enhances performance, prevents injury and aids recovery.",
-        "price": "£70"
-      }
+    "package2": {
+      "name": "A Bespoke Blend of Treatments",
+      "price1": "120 min: £169",
+      "price2": "",
+      "price3": "",
+      "price4": "",
+      "feature1": "A fully personalised wellness experience — choose your preferred combination of massage, facial, and spa suite.",
+      "feature2": "Tailored to what your body needs most on the day, with guidance from our team.",
+      "feature3": "No two sessions are the same, and that's exactly the point.",
+      "feature4": ""
     },
-
-    
-    "duration90": {
-      "service1": {
-        "name": "Full Body Thai Massage",
-        "description": "Extended traditional Thai treatment. Complete head-to-toe therapy with stretching, acupressure and energy balancing.",
-        "price": "£85"
-      },
-      "service2": {
-        "name": "Aromatherapy Deluxe",
-        "description": "Luxurious extended aromatherapy session. Includes facial massage and extra time for complete relaxation.",
-        "price": "£95"
-      },
-      "service3": {
-        "name": "Deep Tissue Therapy",
-        "description": "Comprehensive deep tissue work. Addresses multiple problem areas with focused attention and time for muscle recovery.",
-        "price": "£100"
-      },
-      "service4": {
-        "name": "Hot Stone Therapy",
-        "description": "Extended hot stone treatment with full body massage. Ultimate relaxation experience with therapeutic heat.",
-        "price": "£105"
-      }
-    },
-    "duration120": {
-      "service1": {
-        "name": "Ultimate Thai Experience",
-        "description": "The complete traditional Thai massage journey. Includes herbal compress, stretching and deep energy work for total restoration.",
-        "price": "£110"
-      },
-      "service2": {
-        "name": "Couples Massage Package",
-        "description": "Share the experience together in our couples suite. Two therapists provide synchronized massage treatments.",
-        "price": "£170"
-      },
-      "service3": {
-        "name": "Complete Wellness Therapy",
-        "description": "Our signature treatment combining multiple modalities. Customized to your needs for comprehensive mind-body healing.",
-        "price": "£120"
-      }
+    "package3": {
+      "name": "The Lotus Wellness Journey",
+      "price1": "180 min: £219",
+      "price2": "",
+      "price3": "",
+      "price4": "",
+      "feature1": "A three-hour journey through our finest treatments — facial therapy, signature massage, and private Jacuzzi & Sauna Suite.",
+      "feature2": "Each stage flows naturally into the next, giving your body time to fully unwind at every step.",
+      "feature3": "Our most complete wellness experience, and one you'll want to return to.",
+      "feature4": ""
     }
   }
 }

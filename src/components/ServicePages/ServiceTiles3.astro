@@ -1,0 +1,379 @@
+---
+import { t } from "i18n:astro";
+import { getImage } from "astro:assets";
+import client from "@data/client.json";
+
+import massage1 from "@assets/images/massages/massage1.jpg";
+import massage2 from "@assets/images/massages/massage2.jpg";
+import massage3 from "@assets/images/massages/massage3.jpg";
+import massage4 from "@assets/images/massages/massage4.jpg";
+import massage5 from "@assets/images/massages/massage5.jpg";
+import massage6 from "@assets/images/massages/massage6.jpg";
+import massage7 from "@assets/images/massages/massage7.jpg";
+import massage8 from "@assets/images/massages/massage8.jpg";
+import massage9 from "@assets/images/massages/massage9.jpg";
+
+const optimizedMassage1 = await getImage({ src: massage1, format: 'webp', width: 305 });
+const optimizedMassage1Mobile = await getImage({ src: massage1, format: 'webp', width: 600 });
+const optimizedMassage2 = await getImage({ src: massage2, format: 'webp', width: 305 });
+const optimizedMassage2Mobile = await getImage({ src: massage2, format: 'webp', width: 600 });
+const optimizedMassage3 = await getImage({ src: massage3, format: 'webp', width: 305 });
+const optimizedMassage3Mobile = await getImage({ src: massage3, format: 'webp', width: 600 });
+const optimizedMassage4 = await getImage({ src: massage4, format: 'webp', width: 305 });
+const optimizedMassage4Mobile = await getImage({ src: massage4, format: 'webp', width: 600 });
+const optimizedMassage5 = await getImage({ src: massage5, format: 'webp', width: 305 });
+const optimizedMassage5Mobile = await getImage({ src: massage5, format: 'webp', width: 600 });
+const optimizedMassage6 = await getImage({ src: massage6, format: 'webp', width: 305 });
+const optimizedMassage6Mobile = await getImage({ src: massage6, format: 'webp', width: 600 });
+const optimizedMassage7 = await getImage({ src: massage7, format: 'webp', width: 305 });
+const optimizedMassage7Mobile = await getImage({ src: massage7, format: 'webp', width: 600 });
+const optimizedMassage8 = await getImage({ src: massage8, format: 'webp', width: 305 });
+const optimizedMassage8Mobile = await getImage({ src: massage8, format: 'webp', width: 600 });
+const optimizedMassage9 = await getImage({ src: massage9, format: 'webp', width: 305 });
+const optimizedMassage9Mobile = await getImage({ src: massage9, format: 'webp', width: 600 });
+
+const tiles = [
+  {
+    name: t("services:tiles.service1.name"),
+    tagline: t("services:tiles.service1.tagline"),
+    imageDesktop: optimizedMassage1.src,
+    imageMobile: optimizedMassage1Mobile.src,
+    imageFallback: massage1.src,
+    price1: t("services:tiles.service1.price1"),
+    price2: t("services:tiles.service1.price2"),
+    price3: t("services:tiles.service1.price3"),
+    price4: t("services:tiles.service1.price4"),
+  },
+  {
+    name: t("services:tiles.service2.name"),
+    tagline: t("services:tiles.service2.tagline"),
+    imageDesktop: optimizedMassage2.src,
+    imageMobile: optimizedMassage2Mobile.src,
+    imageFallback: massage2.src,
+    price1: t("services:tiles.service2.price1"),
+    price2: t("services:tiles.service2.price2"),
+    price3: t("services:tiles.service2.price3"),
+    price4: t("services:tiles.service2.price4"),
+  },
+  {
+    name: t("services:tiles.service3.name"),
+    tagline: t("services:tiles.service3.tagline"),
+    imageDesktop: optimizedMassage3.src,
+    imageMobile: optimizedMassage3Mobile.src,
+    imageFallback: massage3.src,
+    price1: t("services:tiles.service3.price1"),
+    price2: t("services:tiles.service3.price2"),
+    price3: t("services:tiles.service3.price3"),
+    price4: t("services:tiles.service3.price4"),
+  },
+  {
+    name: t("services:tiles.service4.name"),
+    tagline: t("services:tiles.service4.tagline"),
+    imageDesktop: optimizedMassage4.src,
+    imageMobile: optimizedMassage4Mobile.src,
+    imageFallback: massage4.src,
+    price1: t("services:tiles.service4.price1"),
+    price2: t("services:tiles.service4.price2"),
+    price3: t("services:tiles.service4.price3"),
+    price4: t("services:tiles.service4.price4"),
+  },
+  {
+    name: t("services:tiles.service5.name"),
+    tagline: t("services:tiles.service5.tagline"),
+    imageDesktop: optimizedMassage5.src,
+    imageMobile: optimizedMassage5Mobile.src,
+    imageFallback: massage5.src,
+    price1: t("services:tiles.service5.price1"),
+    price2: t("services:tiles.service5.price2"),
+    price3: t("services:tiles.service5.price3"),
+    price4: t("services:tiles.service5.price4"),
+  },
+  {
+    name: t("services:tiles.service6.name"),
+    tagline: t("services:tiles.service6.tagline"),
+    imageDesktop: optimizedMassage6.src,
+    imageMobile: optimizedMassage6Mobile.src,
+    imageFallback: massage6.src,
+    price1: t("services:tiles.service6.price1"),
+    price2: t("services:tiles.service6.price2"),
+    price3: t("services:tiles.service6.price3"),
+    price4: t("services:tiles.service6.price4"),
+  },
+  {
+    name: t("services:tiles.service7.name"),
+    tagline: t("services:tiles.service7.tagline"),
+    imageDesktop: optimizedMassage7.src,
+    imageMobile: optimizedMassage7Mobile.src,
+    imageFallback: massage7.src,
+    price1: t("services:tiles.service7.price1"),
+    price2: t("services:tiles.service7.price2"),
+    price3: t("services:tiles.service7.price3"),
+    price4: t("services:tiles.service7.price4"),
+  },
+  {
+    name: t("services:tiles.service8.name"),
+    tagline: t("services:tiles.service8.tagline"),
+    imageDesktop: optimizedMassage8.src,
+    imageMobile: optimizedMassage8Mobile.src,
+    imageFallback: massage8.src,
+    price1: t("services:tiles.service8.price1"),
+    price2: t("services:tiles.service8.price2"),
+    price3: t("services:tiles.service8.price3"),
+    price4: t("services:tiles.service8.price4"),
+  },
+  {
+    name: t("services:tiles.service9.name"),
+    tagline: t("services:tiles.service9.tagline"),
+    imageDesktop: optimizedMassage9.src,
+    imageMobile: optimizedMassage9Mobile.src,
+    imageFallback: massage9.src,
+    price1: t("services:tiles.service9.price1"),
+    price2: t("services:tiles.service9.price2"),
+    price3: t("services:tiles.service9.price3"),
+    price4: t("services:tiles.service9.price4"),
+  },
+].filter(tile => tile.name);
+---
+
+<!-- ============================================ -->
+<!--                Project Tiles                 -->
+<!-- ============================================ -->
+
+<section id="project-tiles-2459">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{t("services:tiles.topper")}</span>
+            <h2 class="cs-title">{t("services:tiles.title")}</h2>
+            <p class="cs-text">
+                {t("services:tiles.text")}
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            {tiles.map((tile) => (
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset={tile.imageMobile} type="image/webp" />
+                        <source media="(min-width: 601px)" srcset={tile.imageDesktop} type="image/webp" />
+                        <img loading="lazy" decoding="async" src={tile.imageFallback} alt={tile.name} width="305" height="200" />
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">{tile.name}</h3>
+                        <div class="cs-pricing">
+                            {tile.price1 && <span class="cs-duration">{tile.price1}</span>}
+                            {tile.price2 && <span class="cs-duration"><br />{tile.price2}</span>}
+                            {tile.price3 && <span class="cs-duration"><br />{tile.price3}</span>}
+                            {tile.price4 && <span class="cs-duration"><br />{tile.price4}</span>}
+                        </div>
+                        <p class="cs-item-text">{tile.tagline}</p>
+                    </div>
+                    <a href={client.bookingUrl} target="_blank" rel="noopener noreferrer" class="cs-link">
+                        {t("projects:tiles.cta")}
+                        <img class="cs-link-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" width="20" height="20" />
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+
+/*-- -------------------------- -->
+<---        Project Tiles        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #project-tiles-2459 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (784/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-title,
+        .cs-text {
+            max-width: 100%;
+        }
+
+        .cs-card-group {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: stretch;
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            height: auto;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--secondary);
+                opacity: 0.05;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: clamp(13.75rem, 26vw, 18.75rem);
+            overflow: hidden;
+            display: block;
+            flex-shrink: 0;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cs-flex {
+            padding: (24/16rem) clamp(1rem, 2vw, 1.5rem);
+            flex: 1;
+        }
+
+        .cs-h3 {
+            font-size: clamp(1.25rem, 2.3vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-pricing {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-link {
+            font-weight: 700;
+            line-height: 1.2em;
+            text-decoration: none;
+            padding: (16/16rem) (24/16rem);
+            color: var(--headerColor);
+            border-top: 1px solid #e7e7e8;
+            display: flex;
+            justify-content: space-between;
+            gap: (32/16rem);
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+            }
+        }
+
+        .cs-link-icon {
+            width: (20/16rem);
+            height: auto;
+            display: block;
+            position: relative;
+            transition: filter 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #project-tiles-2459 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #project-tiles-2459 {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title,
+            .cs-text,
+            .cs-h3,
+            .cs-pricing,
+            .cs-item-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-link {
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+             }
+
+            .cs-text,
+            .cs-item-text {
+                opacity: 0.8;
+            }
+
+            .cs-item {
+                &:before {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+}
+
+</style>

@@ -1,0 +1,229 @@
+---
+import { getImage } from "astro:assets";
+
+import img1 from "@assets/images/gallery/gal1.jpg";
+import img2 from "@assets/images/gallery/gal2.jpg";
+import img3 from "@assets/images/gallery/gal3.jpg";
+import img4 from "@assets/images/gallery/gal4.jpg";
+import img5 from "@assets/images/gallery/gal5.jpg";
+import img6 from "@assets/images/gallery/gal6.jpg";
+import img7 from "@assets/images/gallery/gal7.jpg";
+import img8 from "@assets/images/gallery/gal8.jpg";
+
+const images = await Promise.all([
+  getImage({ src: img1, format: 'webp', width: 900 }),
+  getImage({ src: img2, format: 'webp', width: 900 }),
+  getImage({ src: img3, format: 'webp', width: 900 }),
+  getImage({ src: img4, format: 'webp', width: 900 }),
+  getImage({ src: img5, format: 'webp', width: 900 }),
+  getImage({ src: img6, format: 'webp', width: 900 }),
+  getImage({ src: img7, format: 'webp', width: 900 }),
+  getImage({ src: img8, format: 'webp', width: 900 }),
+]);
+---
+
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-slider">
+  <div class="cs-container">
+    <div class="cs-track-wrapper">
+      <div class="cs-track">
+        {images.map((img, i) => (
+          <div class="cs-slide">
+            <img
+              src={img.src}
+              alt={`Gallery image ${i + 1}`}
+              loading="lazy"
+              decoding="async"
+              width="900"
+              height="600"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <button class="cs-arrow cs-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="cs-arrow cs-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="cs-dots">
+      {images.map((_, i) => (
+        <button class={`cs-dot${i === 0 ? ' cs-active' : ''}`} aria-label={`Go to image ${i + 1}`} data-index={i}></button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="less">
+/*-- -------------------------- -->
+<---        Gallery Slider       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-slider {
+    padding: var(--sectionPadding);
+    padding-left: 0;
+    padding-right: 0;
+
+    .cs-container {
+      width: 100%;
+      max-width: 100%;
+      margin: auto;
+      position: relative;
+    }
+
+    .cs-track-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .cs-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .cs-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: clamp(14rem, 60vw, 32rem);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .cs-arrow {
+      width: (48/16rem);
+      height: (48/16rem);
+      background-color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% - 1.5rem));
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      transition: background-color 0.3s, color 0.3s;
+
+      svg {
+        width: (20/16rem);
+        height: (20/16rem);
+        color: var(--headerColor);
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        background-color: var(--primary);
+        svg { color: #fff; }
+      }
+
+      &.cs-prev { left: (16/16rem); }
+      &.cs-next { right: (16/16rem); }
+    }
+
+    .cs-dots {
+      display: flex;
+      justify-content: center;
+      gap: (8/16rem);
+      padding-top: (16/16rem);
+    }
+
+    .cs-dot {
+      width: (8/16rem);
+      height: (8/16rem);
+      border-radius: 50%;
+      border: none;
+      background-color: #d0d0d0;
+      cursor: pointer;
+      padding: 0;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &.cs-active {
+        background-color: var(--primary);
+        transform: scale(1.4);
+      }
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #gallery-slider {
+    .cs-slide {
+      height: clamp(22rem, 50vw, 38rem);
+    }
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #gallery-slider {
+    .cs-slide {
+      height: clamp(32rem, 45vw, 48rem);
+    }
+
+    .cs-arrow {
+      &.cs-prev { left: (32/16rem); }
+      &.cs-next { right: (32/16rem); }
+    }
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #gallery-slider {
+      .cs-arrow {
+        background-color: var(--medium);
+        svg { color: var(--bodyTextColorWhite); }
+        &:hover { background-color: var(--primary); }
+      }
+      .cs-dot { background-color: var(--medium); }
+    }
+  }
+}
+</style>
+
+<script>
+  const track = document.querySelector<HTMLElement>('#gallery-slider .cs-track');
+  const slides = document.querySelectorAll<HTMLElement>('#gallery-slider .cs-slide');
+  const dots = document.querySelectorAll<HTMLElement>('#gallery-slider .cs-dot');
+  const prevBtn = document.querySelector('#gallery-slider .cs-prev');
+  const nextBtn = document.querySelector('#gallery-slider .cs-next');
+
+  if (track && slides.length && slides[0]) {
+    let current = 0;
+
+    const visibleCount = () => Math.round((track.parentElement?.offsetWidth ?? 0) / slides[0]!.offsetWidth);
+    const maxIndex = () => slides.length - visibleCount();
+
+    function goTo(index: number) {
+      current = Math.max(0, Math.min(index, maxIndex()));
+      const slideWidth = slides[0]!.offsetWidth;
+      (track as HTMLElement).style.transform = `translateX(-${current * slideWidth}px)`;
+      dots.forEach((d, i) => d.classList.toggle('cs-active', i === current));
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    window.addEventListener('resize', () => goTo(current));
+  }
+</script>

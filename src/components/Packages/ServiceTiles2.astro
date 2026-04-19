@@ -1,0 +1,351 @@
+---
+import { t } from "i18n:astro";
+import { getImage } from "astro:assets";
+import client from "@data/client.json";
+
+import pkg1 from "@assets/images/massages/package1.jpg";
+import pkg2 from "@assets/images/massages/package2.jpg";
+import pkg3 from "@assets/images/massages/package3.jpg";
+
+const optimizedMassage1 = await getImage({ src: pkg1, format: 'webp', width: 305 });
+const optimizedMassage1Mobile = await getImage({ src: pkg1, format: 'webp', width: 600 });
+const optimizedMassage2 = await getImage({ src: pkg2, format: 'webp', width: 305 });
+const optimizedMassage2Mobile = await getImage({ src: pkg2, format: 'webp', width: 600 });
+const optimizedMassage3 = await getImage({ src: pkg3, format: 'webp', width: 305 });
+const optimizedMassage3Mobile = await getImage({ src: pkg3, format: 'webp', width: 600 });
+
+
+const packages = [
+  {
+    name: t("services:packages.package1.name"),
+    imageDesktop: optimizedMassage1.src,
+    imageMobile: optimizedMassage1Mobile.src,
+    imageFallback: pkg1.src,
+    price1: t("services:packages.package1.price1"),
+    price2: t("services:packages.package1.price2"),
+    price3: t("services:packages.package1.price3"),
+    price4: t("services:packages.package1.price4"),
+    feature1: t("services:packages.package1.feature1"),
+    feature2: t("services:packages.package1.feature2"),
+    feature3: t("services:packages.package1.feature3"),
+    feature4: t("services:packages.package1.feature4"),
+  },
+  {
+    name: t("services:packages.package2.name"),
+    imageDesktop: optimizedMassage2.src,
+    imageMobile: optimizedMassage2Mobile.src,
+    imageFallback: pkg2.src,
+    price1: t("services:packages.package2.price1"),
+    price2: t("services:packages.package2.price2"),
+    price3: t("services:packages.package2.price3"),
+    price4: t("services:packages.package2.price4"),
+    feature1: t("services:packages.package2.feature1"),
+    feature2: t("services:packages.package2.feature2"),
+    feature3: t("services:packages.package2.feature3"),
+    feature4: t("services:packages.package2.feature4"),
+  },
+  {
+    name: t("services:packages.package3.name"),
+    imageDesktop: optimizedMassage3.src,
+    imageMobile: optimizedMassage3Mobile.src,
+    imageFallback: pkg3.src,
+    price1: t("services:packages.package3.price1"),
+    price2: t("services:packages.package3.price2"),
+    price3: t("services:packages.package3.price3"),
+    price4: t("services:packages.package3.price4"),
+    feature1: t("services:packages.package3.feature1"),
+    feature2: t("services:packages.package3.feature2"),
+    feature3: t("services:packages.package3.feature3"),
+    feature4: t("services:packages.package3.feature4"),
+  },
+].filter(pkg => pkg.name);
+---
+
+<!-- ============================================ -->
+<!--                  Packages                    -->
+<!-- ============================================ -->
+
+<section id="project-tiles-2458">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{t("services:packages.topper")}</span>
+            <h2 class="cs-title">{t("services:packages.title")}</h2>
+            <p class="cs-text">
+                {t("services:packages.text")}
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            {packages.map((pkg) => (
+                <li class="cs-item">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset={pkg.imageMobile} type="image/webp" />
+                        <source media="(min-width: 601px)" srcset={pkg.imageDesktop} type="image/webp" />
+                        <img loading="lazy" decoding="async" src={pkg.imageFallback} alt={pkg.name} width="305" height="200" />
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">{pkg.name}</h3>
+                        <div class="cs-pricing">
+                            {pkg.price1 && <span class="cs-duration">{pkg.price1}</span>}
+                            {pkg.price2 && <span class="cs-duration"><br />{pkg.price2}</span>}
+                            {pkg.price3 && <span class="cs-duration"><br />{pkg.price3}</span>}
+                            {pkg.price4 && <span class="cs-duration"><br />{pkg.price4}</span>}
+                        </div>
+                        <ul class="cs-ul">
+                            {pkg.feature1 && (
+                                <li class="cs-li">
+                                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24" />
+                                    {pkg.feature1}
+                                </li>
+                            )}
+                            {pkg.feature2 && (
+                                <li class="cs-li">
+                                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24" />
+                                    {pkg.feature2}
+                                </li>
+                            )}
+                            {pkg.feature3 && (
+                                <li class="cs-li">
+                                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24" />
+                                    {pkg.feature3}
+                                </li>
+                            )}
+                            {pkg.feature4 && (
+                                <li class="cs-li">
+                                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24" />
+                                    {pkg.feature4}
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                    <a href={client.bookingUrl} target="_blank" rel="noopener noreferrer" class="cs-link">
+                        {t("services:packages.cta")}
+                        <img class="cs-link-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" width="20" height="20" />
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+
+/*-- -------------------------- -->
+<---          Packages          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #project-tiles-2458 {
+        padding: var(--sectionPadding);
+        padding-bottom: 0;
+
+        .cs-container {
+            width: 100%;
+            max-width: (784/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-title,
+        .cs-text {
+            max-width: 100%;
+        }
+
+        .cs-card-group {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: stretch;
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            height: auto;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--secondary);
+                opacity: 0.05;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: clamp(13.75rem, 26vw, 18.75rem);
+            overflow: hidden;
+            display: block;
+            flex-shrink: 0;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cs-flex {
+            padding: (24/16rem) clamp(1rem, 2vw, 1.5rem);
+            flex: 1;
+        }
+
+        .cs-h3 {
+            font-size: clamp(1.25rem, 2.3vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-pricing {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+        }
+
+        .cs-li {
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            font-weight: 400;
+            line-height: 1.5em;
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            color: var(--bodyTextColor);
+            display: flex;
+            align-items: flex-start;
+            gap: (10/16rem);
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .cs-link {
+            font-weight: 700;
+            line-height: 1.2em;
+            text-decoration: none;
+            padding: (16/16rem) (24/16rem);
+            color: var(--headerColor);
+            border-top: 1px solid #e7e7e8;
+            display: flex;
+            justify-content: space-between;
+            gap: (32/16rem);
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+            }
+        }
+
+        .cs-link-icon {
+            width: (20/16rem);
+            height: auto;
+            display: block;
+            flex-shrink: 0;
+            transition: filter 0.3s;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #project-tiles-2458 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #project-tiles-2458 {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
+            .cs-title,
+            .cs-text,
+            .cs-h3,
+            .cs-pricing,
+            .cs-li {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-link {
+                color: var(--bodyTextColorWhite);
+
+                .cs-link-icon {
+                    filter: grayscale(0) brightness(10000%);
+                }
+             }
+
+            .cs-text,
+            .cs-li {
+                opacity: 0.8;
+            }
+
+            .cs-item {
+                &:before {
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+}
+
+</style>
