@@ -93,66 +93,37 @@
   // Button styles
   // Button styles - Different hover effects based on button style
   .cs-button-solid {
-    font-size: (16/16rem);
-    font-weight: bold;
-    line-height: (50/16em);
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: auto;
-    height: (50/16rem);
-    padding: 0 (30/16rem);
+		font-size: 1rem;
+		font-weight: bold;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: auto;
+		line-height: 3.125em;
+		height: 3.125rem;
+		text-align: center;
+		padding: 0 1.875rem;
+		border-radius: 1.5rem 0 1.5rem 0;
+		position: relative;
+		z-index: 1;
+		background-color: var(--primary);
+		color: #fff;
+		transition: background-color 0.3s, border-radius 0.3s;
+	  }
+	  .cs-button-solid:hover {
+		background-color: var(--primary);
+		border-radius: 0 1.5rem 0 1.5rem;
+	  }
+	  .skip {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: -1111111;
+	  }
 
-    // Base styles
-    color: var(--light);
-    background-color: var(--primary);
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    
-    // Apply button style from config
-    .apply-button-style();
-    
-    // Conditional hover effects based on button style
-    
-    // PILL BUTTON - Simple fade transition (looks best for fully rounded buttons)
-    & when (@button-style = 'pill') {
-      transition: background-color 0.3s, color 0.3s;
-      
-      &:hover {
-        background-color: #000;
-        color: #fff;
-      }
+    .cs-hide-on-mobile {
+        display: none;
     }
-    
-    // SOFT & SHARP BUTTONS - Slide transition (works well with corners)
-    & when (@button-style = 'soft'), (@button-style = 'sharp') {
-      transition: color 0.3s;
-      transition-delay: 0.1s;
-      
-      &:hover {
-        color: #fff;
-        &:before {
-          width: 100%;
-        }
-      }
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        background-color: #000;
-        opacity: 1;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: width 0.3s;
-        .apply-button-style();
-      }
-    }
-  }
 }
 
 /* Dark mode general styles */
