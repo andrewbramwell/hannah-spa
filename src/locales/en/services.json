@@ -62,22 +62,6 @@
       "price2": "",
       "price3": "",
       "price4": ""
-    },
-    "service8": {
-      "name": "Jacuzzi & Sauna Suite (Single)",
-      "tagline": "Private heat therapy to relax muscles, support detoxification, and prepare your body for treatment. Pre-treatment only.",
-      "price1": "£29",
-      "price2": "",
-      "price3": "",
-      "price4": ""
-    },
-    "service9": {
-      "name": "Jacuzzi & Sauna Suite — Couples",
-      "tagline": "A private Jacuzzi and sauna for two — the perfect way to unwind together before your massage treatments. Pre-treatment only.",
-      "price1": "£80",
-      "price2": "",
-      "price3": "",
-      "price4": ""
     }
   },
   "packages": {
@@ -87,12 +71,12 @@
     "cta": "Book Now",
     "package1": {
       "name": "Couples Massage Package",
-      "price1": "60 min: £150",
+      "price1": "60 min: £140",
       "price2": "",
       "price3": "",
       "price4": "",
       "feature1": "A full hour of side-by-side massage in a calm, shared space — a lovely way to slow down and reconnect.",
-      "feature2": "Includes a complimentary 30-minute Jacuzzi & Sauna Suite so you can ease in before your treatment begins.",
+      "feature2": "",
       "feature3": "Everything you need for a proper afternoon off together.",
       "feature4": ""
     },
@@ -102,7 +86,7 @@
       "price2": "",
       "price3": "",
       "price4": "",
-      "feature1": "A fully personalised wellness experience — choose your preferred combination of massage, facial, and spa suite.",
+      "feature1": "A fully personalised wellness experience — choose your preferred combination of massage, facial therapy, and body scrub.",
       "feature2": "Tailored to what your body needs most on the day, with guidance from our team.",
       "feature3": "No two sessions are the same, and that's exactly the point.",
       "feature4": ""
@@ -113,7 +97,7 @@
       "price2": "",
       "price3": "",
       "price4": "",
-      "feature1": "A three-hour journey through our finest treatments — facial therapy, signature massage, and private Jacuzzi & Sauna Suite.",
+      "feature1": "A three-hour journey through our finest treatments, including facial therapy and our signature massage.",
       "feature2": "Each stage flows naturally into the next, giving your body time to fully unwind at every step.",
       "feature3": "Our most complete wellness experience, and one you'll want to return to.",
       "feature4": ""
